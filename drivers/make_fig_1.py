@@ -1,10 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import astropy.units as u
 import scipy
 from astropy.coordinates import SkyCoord
-import healpy as hp
 import matplotlib.patches as patches
 
 import estoiles.gw_calc as gwc
@@ -60,7 +58,7 @@ ax.text(.11,-.27,r'\bf{E}',color='firebrick',fontsize=20)
 ax.get_yaxis().set_visible(False)
 ax.get_xaxis().set_visible(False)
 
-outpath = make_file_path(FIGSDIR, {}, extra_string='FOV',ext='.png')
+outpath = make_file_path(FIGSDIR, {}, extra_string='figure_1_1',ext='.png')
 savefig(fig, outpath, writepdf=False)
 
 # hemisphere dn orthographic projection
@@ -92,6 +90,6 @@ ScaleBar = ScaleBar.to(1*u.uas)
 ax.text(0.69,-.97,'{:.2f}'.format(ScaleBar.value)+r'~$\mu as$',fontsize=20)
 ax.axis('off')
 
-outpath = make_file_path(FIGSDIR, {}, extra_string='hemisphere_FOV',ext='.png')
+outpath = make_file_path(FIGSDIR, {}, extra_string='figure_1_2',ext='.png')
 
 savefig(fig, outpath, writepdf=False)

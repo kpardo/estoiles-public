@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import astropy.units as u
 import scipy
 from astropy.coordinates import SkyCoord
@@ -17,7 +16,7 @@ import os
 paper_plot()
 fname = DATADIR+'forfigs/dnmag.npy'
 if not os.path.exists(fname):
-    import drivers.make_dnmag
+    import make_dnmag
 
 hm_mag = np.asarray(np.load(fname,allow_pickle=True))
 conv = ((1*u.rad).to(1*u.uas)).value
@@ -52,6 +51,6 @@ ax.text(110*np.pi/180,3*np.pi/180,r'$\mathbf{120^\circ}$',fontsize=20,color='w')
 ax.text(-67*np.pi/180,3*np.pi/180,r'-$\mathbf{60^\circ}$',fontsize=20,color='w')
 ax.text(-130*np.pi/180,3*np.pi/180,r'-$\mathbf{120^\circ}$',fontsize=20,color='w')
 
-outpath = make_file_path(FIGSDIR, {}, extra_string='heat_map',ext='.png')
+outpath = make_file_path(FIGSDIR, {}, extra_string='figure_2',ext='.png')
 
-savefig(fig, outpath, writepdf=True)
+savefig(fig, outpath, writepdf=False)
