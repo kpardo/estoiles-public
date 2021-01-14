@@ -3,14 +3,15 @@ Defines paths for all the things.
 '''
 
 import os
-from estoiles import __path__
+import pathlib
 
-DATADIR = os.path.join(os.path.dirname(__path__._path[0]),
+parentd = str(pathlib.Path(__file__).parent.absolute())[:-8]
+DATADIR = os.path.join(parentd,
         'data/')
-RESULTSDIR = os.path.join(os.path.dirname(__path__._path[0]), 'results/')
-FIGSDIR = os.path.join(os.path.dirname(__path__._path[0]), 'results/paperfigs/')
-CHAINSDIR = os.path.join(os.path.dirname(__path__._path[0]), 'results/chains/')
-DIAGNOSTICDIR = os.path.join(os.path.dirname(__path__._path[0]),
+RESULTSDIR = os.path.join(parentd, 'results/')
+FIGSDIR = os.path.join(parentd, 'results/paperfigs/')
+CHAINSDIR = os.path.join(parentd, 'results/chains/')
+DIAGNOSTICDIR = os.path.join(parentd,
         'results/diagnostic_plots/')
 
 alldirdict = {key:value for (key,value) in locals().items() if 'DIR' in key}
