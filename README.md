@@ -1,5 +1,5 @@
 # estoiles-public
-This repository contains all the code for the figures and analysis in Wang et al. (2020) [link to be added].
+This repository contains all the code for the figures and analysis in [Wang et al. (2021)](https://ui.adsabs.harvard.edu/abs/2021PhRvD.103h4007W/abstract).
 
 The [`estoiles/`](estoiles/) directory contains the actual calculation code. 
 
